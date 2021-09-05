@@ -40,10 +40,10 @@ public class ExceptionsDemo {
 		// This demonstrates how custom exception classes can be used to
 		// handle exceptions in unlimited ways.
 		try {
-			testMethod1(-1);
-		} catch (Exception e) {
+			testMethod2(-1);
+		} catch (CustomException e) {
 		
-			CustomException.terminate;
+			e.terminate();
 		}
 	}
 
@@ -54,9 +54,9 @@ public class ExceptionsDemo {
 	}
 
 	// 4. Create a static void method called testMethod2(int x) that throws
-	static void testMethod2(int x) {
+	static void testMethod2(int x) throws CustomException {
 		if (x < 0) {
-			throw new CustomExpectation();
+			throw new CustomException();
 		}
 	}
 	// a CustomException if x is negative.
